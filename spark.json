@@ -1,0 +1,11 @@
+{
+  "name": "vibes",
+  "version": "0.1.0",
+  "description": "CSS/Styles library",
+  "type": "module",
+  "targets": ["infinity"],
+  "dependencies": {
+    "services": [],
+    "modules": []
+  }
+}
