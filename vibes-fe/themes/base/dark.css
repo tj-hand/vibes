@@ -1,0 +1,223 @@
+/**
+ * VIBES - Dark Theme
+ * Version: 1.0
+ *
+ * Dark theme for the Spark Framework.
+ * Inverts the color scheme for reduced eye strain in low-light environments.
+ *
+ * Theme activation: Add data-theme="dark" to <html>
+ */
+
+[data-theme="dark"] {
+  /* Color scheme for browser UI */
+  color-scheme: dark;
+
+  /*========================================
+   * PRIMARY COLORS (Adjusted for dark backgrounds)
+   *========================================*/
+  --vb-color-primary: #60a5fa;
+  --vb-color-primary-hover: #93c5fd;
+  --vb-color-primary-active: #3b82f6;
+  --vb-color-primary-light: #1e3a5f;
+  --vb-color-primary-dark: #dbeafe;
+
+  /*========================================
+   * SECONDARY COLORS
+   *========================================*/
+  --vb-color-secondary: #94a3b8;
+  --vb-color-secondary-hover: #cbd5e1;
+  --vb-color-secondary-active: #64748b;
+  --vb-color-secondary-light: #1e293b;
+  --vb-color-secondary-dark: #f1f5f9;
+
+  /*========================================
+   * SEMANTIC COLORS (Adjusted for dark backgrounds)
+   *========================================*/
+
+  /* Success */
+  --vb-color-success: #4ade80;
+  --vb-color-success-hover: #86efac;
+  --vb-color-success-active: #22c55e;
+  --vb-color-success-light: #14532d;
+  --vb-color-success-dark: #dcfce7;
+
+  /* Warning */
+  --vb-color-warning: #fbbf24;
+  --vb-color-warning-hover: #fcd34d;
+  --vb-color-warning-active: #f59e0b;
+  --vb-color-warning-light: #713f12;
+  --vb-color-warning-dark: #fef9c3;
+
+  /* Danger */
+  --vb-color-danger: #f87171;
+  --vb-color-danger-hover: #fca5a5;
+  --vb-color-danger-active: #ef4444;
+  --vb-color-danger-light: #7f1d1d;
+  --vb-color-danger-dark: #fee2e2;
+
+  /* Info */
+  --vb-color-info: #38bdf8;
+  --vb-color-info-hover: #7dd3fc;
+  --vb-color-info-active: #0ea5e9;
+  --vb-color-info-light: #164e63;
+  --vb-color-info-dark: #cffafe;
+
+  /*========================================
+   * SURFACE COLORS
+   *========================================*/
+  --vb-color-surface: var(--vb-color-gray-900);
+  --vb-color-surface-elevated: var(--vb-color-gray-800);
+  --vb-color-surface-sunken: var(--vb-color-gray-950);
+  --vb-color-surface-overlay: rgba(0, 0, 0, 0.7);
+
+  /*========================================
+   * TEXT COLORS
+   *========================================*/
+  --vb-color-text: var(--vb-color-gray-100);
+  --vb-color-text-secondary: var(--vb-color-gray-400);
+  --vb-color-text-muted: var(--vb-color-gray-500);
+  --vb-color-text-inverse: var(--vb-color-gray-900);
+  --vb-color-text-link: var(--vb-color-primary);
+  --vb-color-text-link-hover: var(--vb-color-primary-hover);
+
+  /*========================================
+   * BORDER COLORS
+   *========================================*/
+  --vb-color-border: var(--vb-color-gray-700);
+  --vb-color-border-strong: var(--vb-color-gray-600);
+  --vb-color-border-focus: var(--vb-color-primary);
+
+  /*========================================
+   * BACKGROUND COLORS
+   *========================================*/
+  --vb-color-background: var(--vb-color-gray-950);
+
+  /*========================================
+   * COMPONENT OVERRIDES
+   *========================================*/
+
+  /* Inputs */
+  --vb-input-bg: var(--vb-color-gray-800);
+  --vb-input-border-color: var(--vb-color-gray-600);
+  --vb-input-border-color-hover: var(--vb-color-gray-500);
+  --vb-input-placeholder-color: var(--vb-color-gray-500);
+
+  /* Cards */
+  --vb-card-bg: var(--vb-color-gray-800);
+  --vb-card-border-color: var(--vb-color-gray-700);
+  --vb-card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+
+  /* Tables */
+  --vb-table-header-bg: var(--vb-color-gray-800);
+  --vb-table-header-color: var(--vb-color-gray-300);
+  --vb-table-border-color: var(--vb-color-gray-700);
+  --vb-table-row-hover-bg: var(--vb-color-gray-800);
+  --vb-table-stripe-bg: rgba(255, 255, 255, 0.02);
+
+  /* Sidebar */
+  --vb-sidebar-bg: var(--vb-color-gray-900);
+  --vb-sidebar-border-color: var(--vb-color-gray-800);
+
+  /* Header */
+  --vb-header-bg: var(--vb-color-gray-900);
+  --vb-header-border-color: var(--vb-color-gray-800);
+
+  /* Modal */
+  --vb-modal-bg: var(--vb-color-gray-800);
+  --vb-modal-backdrop-color: rgba(0, 0, 0, 0.7);
+
+  /* Dropdown */
+  --vb-dropdown-bg: var(--vb-color-gray-800);
+  --vb-dropdown-border-color: var(--vb-color-gray-700);
+  --vb-dropdown-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --vb-dropdown-item-hover-bg: var(--vb-color-gray-700);
+
+  /* Tooltip */
+  --vb-tooltip-bg: var(--vb-color-gray-100);
+  --vb-tooltip-color: var(--vb-color-gray-900);
+
+  /* Code blocks */
+  --vb-code-bg: var(--vb-color-gray-800);
+  --vb-code-color: var(--vb-color-gray-200);
+
+  /* Scrollbar */
+  --vb-scrollbar-track: var(--vb-color-gray-800);
+  --vb-scrollbar-thumb: var(--vb-color-gray-600);
+  --vb-scrollbar-thumb-hover: var(--vb-color-gray-500);
+
+  /*========================================
+   * SHADOWS (Dark theme uses darker, more pronounced shadows)
+   *========================================*/
+  --vb-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  --vb-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --vb-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --vb-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+
+  /* Focus shadows (adjusted for visibility on dark) */
+  --vb-shadow-focus: 0 0 0 3px rgba(96, 165, 250, 0.5);
+  --vb-shadow-focus-danger: 0 0 0 3px rgba(248, 113, 113, 0.5);
+  --vb-shadow-focus-success: 0 0 0 3px rgba(74, 222, 128, 0.5);
+}
+
+/*========================================
+ * SCROLLBAR STYLING (WebKit)
+ *========================================*/
+[data-theme="dark"]::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+[data-theme="dark"]::-webkit-scrollbar-track {
+  background: var(--vb-scrollbar-track);
+}
+
+[data-theme="dark"]::-webkit-scrollbar-thumb {
+  background: var(--vb-scrollbar-thumb);
+  border-radius: var(--vb-radius-full);
+  border: 3px solid var(--vb-scrollbar-track);
+}
+
+[data-theme="dark"]::-webkit-scrollbar-thumb:hover {
+  background: var(--vb-scrollbar-thumb-hover);
+}
+
+/*========================================
+ * SYSTEM PREFERENCE DETECTION
+ *========================================*/
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    /* Color scheme for browser UI */
+    color-scheme: dark;
+
+    /* Apply dark theme values when no explicit theme is set */
+    --vb-color-primary: #60a5fa;
+    --vb-color-primary-hover: #93c5fd;
+    --vb-color-primary-active: #3b82f6;
+
+    --vb-color-surface: var(--vb-color-gray-900);
+    --vb-color-surface-elevated: var(--vb-color-gray-800);
+    --vb-color-surface-sunken: var(--vb-color-gray-950);
+
+    --vb-color-text: var(--vb-color-gray-100);
+    --vb-color-text-secondary: var(--vb-color-gray-400);
+    --vb-color-text-muted: var(--vb-color-gray-500);
+
+    --vb-color-border: var(--vb-color-gray-700);
+    --vb-color-border-strong: var(--vb-color-gray-600);
+
+    --vb-color-background: var(--vb-color-gray-950);
+
+    --vb-input-bg: var(--vb-color-gray-800);
+    --vb-input-border-color: var(--vb-color-gray-600);
+
+    --vb-card-bg: var(--vb-color-gray-800);
+    --vb-card-border-color: var(--vb-color-gray-700);
+
+    --vb-table-header-bg: var(--vb-color-gray-800);
+    --vb-table-border-color: var(--vb-color-gray-700);
+    --vb-table-row-hover-bg: var(--vb-color-gray-800);
+
+    --vb-sidebar-bg: var(--vb-color-gray-900);
+    --vb-header-bg: var(--vb-color-gray-900);
+  }
+}

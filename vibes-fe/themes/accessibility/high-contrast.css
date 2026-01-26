@@ -1,0 +1,153 @@
+/**
+ * VIBES - High Contrast Theme
+ * Version: 1.0
+ *
+ * High contrast theme for users with visual impairments.
+ * Meets WCAG 2.1 AAA contrast requirements (7:1 for normal text).
+ *
+ * This is an overlay theme - combine with base themes:
+ * - data-theme="light" data-contrast="high"
+ * - data-theme="dark" data-contrast="high"
+ */
+
+[data-contrast="high"] {
+  /*========================================
+   * TEXT COLORS (Maximum contrast)
+   *========================================*/
+  --vb-color-text: var(--vb-color-black);
+  --vb-color-text-secondary: var(--vb-color-gray-800);
+  --vb-color-text-muted: var(--vb-color-gray-700);
+
+  /*========================================
+   * SURFACE COLORS (Pure white/black backgrounds)
+   *========================================*/
+  --vb-color-surface: var(--vb-color-white);
+  --vb-color-surface-elevated: var(--vb-color-white);
+  --vb-color-surface-sunken: var(--vb-color-gray-100);
+  --vb-color-background: var(--vb-color-white);
+
+  /*========================================
+   * BORDER COLORS (More visible borders)
+   *========================================*/
+  --vb-color-border: var(--vb-color-gray-600);
+  --vb-color-border-strong: var(--vb-color-gray-800);
+  --vb-color-border-focus: var(--vb-color-black);
+
+  /*========================================
+   * PRIMARY COLORS (Higher contrast)
+   *========================================*/
+  --vb-color-primary: #1e40af;
+  --vb-color-primary-hover: #1e3a8a;
+  --vb-color-primary-active: #172554;
+  --vb-color-primary-light: #bfdbfe;
+
+  /*========================================
+   * SEMANTIC COLORS (More saturated for visibility)
+   *========================================*/
+  --vb-color-success: #166534;
+  --vb-color-success-light: #bbf7d0;
+
+  --vb-color-warning: #854d0e;
+  --vb-color-warning-light: #fef08a;
+
+  --vb-color-danger: #991b1b;
+  --vb-color-danger-light: #fecaca;
+
+  --vb-color-info: #0e7490;
+  --vb-color-info-light: #a5f3fc;
+
+  /*========================================
+   * LINK COLORS (Underlined for visibility)
+   *========================================*/
+  --vb-color-text-link: #1e40af;
+  --vb-color-text-link-hover: #172554;
+
+  /*========================================
+   * COMPONENT OVERRIDES
+   *========================================*/
+
+  /* Inputs - Thicker borders */
+  --vb-input-border-color: var(--vb-color-gray-600);
+  --vb-input-border-color-hover: var(--vb-color-gray-800);
+  --vb-input-border-color-focus: var(--vb-color-black);
+
+  /* Cards - Visible borders */
+  --vb-card-border-color: var(--vb-color-gray-600);
+  --vb-card-shadow: none;
+
+  /* Tables - Stronger borders */
+  --vb-table-border-color: var(--vb-color-gray-600);
+  --vb-table-header-bg: var(--vb-color-gray-200);
+
+  /* Buttons - Solid, high contrast */
+  --vb-button-border-width: 2px;
+
+  /* Focus rings - Thick, visible */
+  --vb-shadow-focus: 0 0 0 3px var(--vb-color-black);
+  --vb-shadow-focus-danger: 0 0 0 3px var(--vb-color-danger);
+}
+
+/* High contrast links should be underlined */
+[data-contrast="high"] a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+[data-contrast="high"] a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* High contrast buttons need visible borders */
+[data-contrast="high"] button,
+[data-contrast="high"] [role="button"] {
+  border-width: 2px;
+  border-style: solid;
+}
+
+/* Focus states are more prominent */
+[data-contrast="high"] :focus-visible {
+  outline: 3px solid var(--vb-color-black);
+  outline-offset: 2px;
+}
+
+/*========================================
+ * DARK THEME + HIGH CONTRAST
+ *========================================*/
+[data-theme="dark"][data-contrast="high"] {
+  --vb-color-text: var(--vb-color-white);
+  --vb-color-text-secondary: var(--vb-color-gray-200);
+  --vb-color-text-muted: var(--vb-color-gray-300);
+
+  --vb-color-surface: var(--vb-color-black);
+  --vb-color-surface-elevated: var(--vb-color-gray-900);
+  --vb-color-surface-sunken: var(--vb-color-black);
+  --vb-color-background: var(--vb-color-black);
+
+  --vb-color-border: var(--vb-color-gray-400);
+  --vb-color-border-strong: var(--vb-color-gray-300);
+  --vb-color-border-focus: var(--vb-color-white);
+
+  --vb-color-primary: #93c5fd;
+  --vb-color-primary-hover: #bfdbfe;
+  --vb-color-primary-active: #60a5fa;
+
+  --vb-color-success: #86efac;
+  --vb-color-warning: #fde047;
+  --vb-color-danger: #fca5a5;
+  --vb-color-info: #67e8f9;
+
+  --vb-color-text-link: #93c5fd;
+  --vb-color-text-link-hover: #bfdbfe;
+
+  --vb-input-border-color: var(--vb-color-gray-400);
+  --vb-card-border-color: var(--vb-color-gray-400);
+  --vb-table-border-color: var(--vb-color-gray-400);
+  --vb-table-header-bg: var(--vb-color-gray-800);
+
+  --vb-shadow-focus: 0 0 0 3px var(--vb-color-white);
+}
+
+[data-theme="dark"][data-contrast="high"] :focus-visible {
+  outline: 3px solid var(--vb-color-white);
+  outline-offset: 2px;
+}

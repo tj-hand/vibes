@@ -1,0 +1,137 @@
+/**
+ * VIBES - Default (Light) Theme
+ * Version: 1.0
+ *
+ * This is the default light theme for the Spark Framework.
+ * It sets semantic color variables using the primitive color palette.
+ *
+ * Theme activation: Add data-theme="default" or no data-theme attribute to <html>
+ */
+
+:root,
+[data-theme="default"],
+[data-theme="light"] {
+  /* Color scheme for browser UI */
+  color-scheme: light;
+
+  /*========================================
+   * SURFACE COLORS
+   *========================================*/
+  --vb-color-surface: var(--vb-color-white);
+  --vb-color-surface-elevated: var(--vb-color-white);
+  --vb-color-surface-sunken: var(--vb-color-gray-50);
+  --vb-color-surface-overlay: rgba(0, 0, 0, 0.5);
+
+  /*========================================
+   * TEXT COLORS
+   *========================================*/
+  --vb-color-text: var(--vb-color-gray-900);
+  --vb-color-text-secondary: var(--vb-color-gray-600);
+  --vb-color-text-muted: var(--vb-color-gray-400);
+  --vb-color-text-inverse: var(--vb-color-white);
+  --vb-color-text-link: var(--vb-color-primary);
+  --vb-color-text-link-hover: var(--vb-color-primary-hover);
+
+  /*========================================
+   * BORDER COLORS
+   *========================================*/
+  --vb-color-border: var(--vb-color-gray-200);
+  --vb-color-border-strong: var(--vb-color-gray-300);
+  --vb-color-border-focus: var(--vb-color-primary);
+
+  /*========================================
+   * BACKGROUND COLORS
+   *========================================*/
+  --vb-color-background: var(--vb-color-gray-50);
+
+  /*========================================
+   * COMPONENT OVERRIDES
+   *========================================*/
+
+  /* Inputs */
+  --vb-input-bg: var(--vb-color-white);
+  --vb-input-border-color: var(--vb-color-gray-300);
+  --vb-input-border-color-hover: var(--vb-color-gray-400);
+  --vb-input-placeholder-color: var(--vb-color-gray-400);
+
+  /* Cards */
+  --vb-card-bg: var(--vb-color-white);
+  --vb-card-border-color: var(--vb-color-gray-200);
+  --vb-card-shadow: var(--vb-shadow-sm);
+
+  /* Tables */
+  --vb-table-header-bg: var(--vb-color-gray-50);
+  --vb-table-header-color: var(--vb-color-gray-700);
+  --vb-table-border-color: var(--vb-color-gray-200);
+  --vb-table-row-hover-bg: var(--vb-color-gray-50);
+  --vb-table-stripe-bg: var(--vb-color-gray-50);
+
+  /* Sidebar */
+  --vb-sidebar-bg: var(--vb-color-white);
+  --vb-sidebar-border-color: var(--vb-color-gray-200);
+
+  /* Header */
+  --vb-header-bg: var(--vb-color-white);
+  --vb-header-border-color: var(--vb-color-gray-200);
+
+  /* Modal */
+  --vb-modal-bg: var(--vb-color-white);
+  --vb-modal-backdrop-color: rgba(0, 0, 0, 0.5);
+
+  /* Dropdown */
+  --vb-dropdown-bg: var(--vb-color-white);
+  --vb-dropdown-border-color: var(--vb-color-gray-200);
+  --vb-dropdown-shadow: var(--vb-shadow-lg);
+  --vb-dropdown-item-hover-bg: var(--vb-color-gray-100);
+
+  /* Tooltip */
+  --vb-tooltip-bg: var(--vb-color-gray-900);
+  --vb-tooltip-color: var(--vb-color-white);
+
+  /* Code blocks */
+  --vb-code-bg: var(--vb-color-gray-100);
+  --vb-code-color: var(--vb-color-gray-800);
+
+  /* Scrollbar (for webkit browsers) */
+  --vb-scrollbar-track: var(--vb-color-gray-100);
+  --vb-scrollbar-thumb: var(--vb-color-gray-300);
+  --vb-scrollbar-thumb-hover: var(--vb-color-gray-400);
+
+  /*========================================
+   * SHADOWS (Light theme uses lighter shadows)
+   *========================================*/
+  --vb-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --vb-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --vb-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --vb-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/*========================================
+ * SCROLLBAR STYLING (WebKit)
+ *========================================*/
+:root::-webkit-scrollbar,
+[data-theme="default"]::-webkit-scrollbar,
+[data-theme="light"]::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+:root::-webkit-scrollbar-track,
+[data-theme="default"]::-webkit-scrollbar-track,
+[data-theme="light"]::-webkit-scrollbar-track {
+  background: var(--vb-scrollbar-track);
+}
+
+:root::-webkit-scrollbar-thumb,
+[data-theme="default"]::-webkit-scrollbar-thumb,
+[data-theme="light"]::-webkit-scrollbar-thumb {
+  background: var(--vb-scrollbar-thumb);
+  border-radius: var(--vb-radius-full);
+  border: 3px solid var(--vb-scrollbar-track);
+}
+
+:root::-webkit-scrollbar-thumb:hover,
+[data-theme="default"]::-webkit-scrollbar-thumb:hover,
+[data-theme="light"]::-webkit-scrollbar-thumb:hover {
+  background: var(--vb-scrollbar-thumb-hover);
+}

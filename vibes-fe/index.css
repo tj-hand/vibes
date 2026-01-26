@@ -1,0 +1,58 @@
+/**
+ * VIBES - CSS Framework & Design System
+ * Main Entry Point
+ *
+ * This file imports all VIBES CSS in the correct order.
+ *
+ * Usage in your application:
+ * @import '@vibes/index.css';
+ *
+ * Or import individual files:
+ * @import '@vibes/vibes.css';            // Base styles + tokens
+ * @import '@vibes/themes/base/dark.css'; // Dark theme
+ */
+
+/* ========================================
+ * 1. BASE STYLES & ROOT TOKENS
+ * Contains CSS reset and all custom properties
+ * ======================================== */
+@import './vibes.css';
+
+/* ========================================
+ * 2. DEFAULT THEME (LIGHT)
+ * Sets semantic colors for light mode
+ * ======================================== */
+@import './themes/base/default.css';
+
+/* ========================================
+ * 3. UTILITY CLASSES
+ * Atomic utility classes for rapid styling
+ * ======================================== */
+@import './utilities/spacing.css';
+@import './utilities/typography.css';
+@import './utilities/layout.css';
+@import './utilities/colors.css';
+@import './utilities/display.css';
+
+/* ========================================
+ * THEME VARIANTS (Loaded conditionally by STAGE)
+ *
+ * These files are NOT imported here by default.
+ * They are loaded dynamically based on user preference:
+ *
+ * - themes/base/dark.css          : Dark theme
+ * - themes/accessibility/high-contrast.css : High contrast
+ * - themes/accessibility/large-text.css    : Large text
+ * - themes/accessibility/reduced-motion.css: Reduced motion
+ *
+ * Example theme switching in STAGE:
+ *
+ * // Set base theme
+ * document.documentElement.dataset.theme = 'dark';
+ *
+ * // Add accessibility overlays
+ * document.documentElement.dataset.contrast = 'high';
+ * document.documentElement.dataset.textSize = 'large';
+ * document.documentElement.dataset.motion = 'reduce';
+ *
+ * ======================================== */

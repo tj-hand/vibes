@@ -1,0 +1,189 @@
+/**
+ * VIBES - Reduced Motion Theme
+ * Version: 1.0
+ *
+ * Reduces or removes animations and transitions for users who are
+ * sensitive to motion (vestibular disorders, motion sickness, etc.).
+ *
+ * This is an overlay theme - combine with any base theme.
+ * Also automatically activates when user has prefers-reduced-motion set.
+ *
+ * Usage:
+ * - data-motion="reduce" on <html>
+ * - Or system preference: prefers-reduced-motion: reduce
+ */
+
+/* User preference via data attribute */
+[data-motion="reduce"],
+/* System preference detection */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    /*========================================
+     * DISABLE ALL TRANSITIONS
+     *========================================*/
+    --vb-transition-all: none;
+    --vb-transition-colors: none;
+    --vb-transition-opacity: none;
+    --vb-transition-transform: none;
+    --vb-transition-shadow: none;
+
+    /*========================================
+     * SET ALL DURATIONS TO INSTANT
+     *========================================*/
+    --vb-duration-75: 0ms;
+    --vb-duration-100: 0ms;
+    --vb-duration-150: 0ms;
+    --vb-duration-200: 0ms;
+    --vb-duration-300: 0ms;
+    --vb-duration-500: 0ms;
+    --vb-duration-700: 0ms;
+    --vb-duration-1000: 0ms;
+  }
+
+  /*========================================
+   * REMOVE ALL ANIMATIONS
+   *========================================*/
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Explicit reduced motion via attribute */
+[data-motion="reduce"] *,
+[data-motion="reduce"] *::before,
+[data-motion="reduce"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/*========================================
+ * SPECIFIC COMPONENT OVERRIDES
+ *========================================*/
+
+[data-motion="reduce"] {
+  /* Loading spinners - Show static state */
+  .vb-spinner {
+    animation: none;
+  }
+
+  /* Skeleton loaders - Show solid state */
+  .vb-skeleton {
+    animation: none;
+    background: var(--vb-color-gray-200);
+  }
+
+  /* Collapse/Expand - Instant */
+  .vb-collapse {
+    transition: none;
+  }
+
+  /* Dropdown menus - Instant appear */
+  .vb-dropdown,
+  .vb-menu {
+    transition: none;
+  }
+
+  /* Modal - Instant appear/disappear */
+  .vb-modal {
+    transition: none;
+  }
+
+  .vb-modal-backdrop {
+    transition: none;
+  }
+
+  /* Toast notifications - Instant appear */
+  .vb-toast {
+    transition: none;
+    animation: none;
+  }
+
+  /* Progress bars - No animation */
+  .vb-progress-bar {
+    transition: none;
+  }
+
+  /* Hover effects - Still show state change, but instant */
+  a:hover,
+  button:hover {
+    transition: none;
+  }
+
+  /* Smooth scrolling disabled */
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/*========================================
+ * SYSTEM PREFERENCE DETECTION
+ *========================================*/
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --vb-transition-all: none;
+    --vb-transition-colors: none;
+    --vb-transition-opacity: none;
+    --vb-transition-transform: none;
+    --vb-transition-shadow: none;
+
+    --vb-duration-75: 0ms;
+    --vb-duration-100: 0ms;
+    --vb-duration-150: 0ms;
+    --vb-duration-200: 0ms;
+    --vb-duration-300: 0ms;
+    --vb-duration-500: 0ms;
+    --vb-duration-700: 0ms;
+    --vb-duration-1000: 0ms;
+  }
+
+  /* Disable smooth scrolling */
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Essential - keep but remove animation */
+  .vb-spinner {
+    animation: none;
+  }
+
+  .vb-skeleton {
+    animation: none;
+    background: var(--vb-color-gray-200);
+  }
+
+  /* Auto-playing carousels/sliders should pause */
+  .vb-carousel,
+  .vb-slider {
+    animation-play-state: paused;
+  }
+}
+
+/*========================================
+ * SUBTLE MOTION PREFERENCE
+ * For users who want reduced but not eliminated motion
+ *========================================*/
+[data-motion="subtle"] {
+  --vb-duration-75: 50ms;
+  --vb-duration-100: 75ms;
+  --vb-duration-150: 100ms;
+  --vb-duration-200: 150ms;
+  --vb-duration-300: 200ms;
+  --vb-duration-500: 300ms;
+  --vb-duration-700: 400ms;
+  --vb-duration-1000: 500ms;
+
+  /* Reduce animation intensity */
+  --vb-ease-bounce: var(--vb-ease-out);
+}
+
+[data-motion="subtle"] * {
+  /* Cap animation iterations */
+  animation-iteration-count: 1;
+}

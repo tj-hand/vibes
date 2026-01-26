@@ -1,0 +1,246 @@
+/**
+ * VIBES - Typography Utilities
+ * Version: 1.0
+ *
+ * Utility classes for text styling.
+ */
+
+/*========================================
+ * FONT FAMILY
+ *========================================*/
+
+.vb-font-sans { font-family: var(--vb-font-family-sans); }
+.vb-font-mono { font-family: var(--vb-font-family-mono); }
+
+/*========================================
+ * FONT SIZE
+ *========================================*/
+
+.vb-text-xs { font-size: var(--vb-font-size-xs); line-height: var(--vb-line-height-normal); }
+.vb-text-sm { font-size: var(--vb-font-size-sm); line-height: var(--vb-line-height-normal); }
+.vb-text-base { font-size: var(--vb-font-size-base); line-height: var(--vb-line-height-normal); }
+.vb-text-lg { font-size: var(--vb-font-size-lg); line-height: var(--vb-line-height-relaxed); }
+.vb-text-xl { font-size: var(--vb-font-size-xl); line-height: var(--vb-line-height-relaxed); }
+.vb-text-2xl { font-size: var(--vb-font-size-2xl); line-height: var(--vb-line-height-snug); }
+.vb-text-3xl { font-size: var(--vb-font-size-3xl); line-height: var(--vb-line-height-snug); }
+.vb-text-4xl { font-size: var(--vb-font-size-4xl); line-height: var(--vb-line-height-tight); }
+.vb-text-5xl { font-size: var(--vb-font-size-5xl); line-height: var(--vb-line-height-none); }
+.vb-text-6xl { font-size: var(--vb-font-size-6xl); line-height: var(--vb-line-height-none); }
+
+/*========================================
+ * FONT WEIGHT
+ *========================================*/
+
+.vb-font-thin { font-weight: var(--vb-font-weight-thin); }
+.vb-font-extralight { font-weight: var(--vb-font-weight-extralight); }
+.vb-font-light { font-weight: var(--vb-font-weight-light); }
+.vb-font-normal { font-weight: var(--vb-font-weight-normal); }
+.vb-font-medium { font-weight: var(--vb-font-weight-medium); }
+.vb-font-semibold { font-weight: var(--vb-font-weight-semibold); }
+.vb-font-bold { font-weight: var(--vb-font-weight-bold); }
+.vb-font-extrabold { font-weight: var(--vb-font-weight-extrabold); }
+.vb-font-black { font-weight: var(--vb-font-weight-black); }
+
+/*========================================
+ * LINE HEIGHT
+ *========================================*/
+
+.vb-leading-none { line-height: var(--vb-line-height-none); }
+.vb-leading-tight { line-height: var(--vb-line-height-tight); }
+.vb-leading-snug { line-height: var(--vb-line-height-snug); }
+.vb-leading-normal { line-height: var(--vb-line-height-normal); }
+.vb-leading-relaxed { line-height: var(--vb-line-height-relaxed); }
+.vb-leading-loose { line-height: var(--vb-line-height-loose); }
+
+/*========================================
+ * LETTER SPACING
+ *========================================*/
+
+.vb-tracking-tighter { letter-spacing: var(--vb-letter-spacing-tighter); }
+.vb-tracking-tight { letter-spacing: var(--vb-letter-spacing-tight); }
+.vb-tracking-normal { letter-spacing: var(--vb-letter-spacing-normal); }
+.vb-tracking-wide { letter-spacing: var(--vb-letter-spacing-wide); }
+.vb-tracking-wider { letter-spacing: var(--vb-letter-spacing-wider); }
+.vb-tracking-widest { letter-spacing: var(--vb-letter-spacing-widest); }
+
+/*========================================
+ * TEXT ALIGNMENT
+ *========================================*/
+
+.vb-text-left { text-align: left; }
+.vb-text-center { text-align: center; }
+.vb-text-right { text-align: right; }
+.vb-text-justify { text-align: justify; }
+.vb-text-start { text-align: start; }
+.vb-text-end { text-align: end; }
+
+/*========================================
+ * TEXT COLOR
+ *========================================*/
+
+.vb-text-inherit { color: inherit; }
+.vb-text-current { color: currentColor; }
+.vb-text-transparent { color: transparent; }
+
+.vb-text-primary { color: var(--vb-color-text); }
+.vb-text-secondary { color: var(--vb-color-text-secondary); }
+.vb-text-muted { color: var(--vb-color-text-muted); }
+.vb-text-inverse { color: var(--vb-color-text-inverse); }
+.vb-text-link { color: var(--vb-color-text-link); }
+
+.vb-text-success { color: var(--vb-color-success); }
+.vb-text-warning { color: var(--vb-color-warning); }
+.vb-text-danger { color: var(--vb-color-danger); }
+.vb-text-info { color: var(--vb-color-info); }
+
+.vb-text-white { color: var(--vb-color-white); }
+.vb-text-black { color: var(--vb-color-black); }
+.vb-text-gray-50 { color: var(--vb-color-gray-50); }
+.vb-text-gray-100 { color: var(--vb-color-gray-100); }
+.vb-text-gray-200 { color: var(--vb-color-gray-200); }
+.vb-text-gray-300 { color: var(--vb-color-gray-300); }
+.vb-text-gray-400 { color: var(--vb-color-gray-400); }
+.vb-text-gray-500 { color: var(--vb-color-gray-500); }
+.vb-text-gray-600 { color: var(--vb-color-gray-600); }
+.vb-text-gray-700 { color: var(--vb-color-gray-700); }
+.vb-text-gray-800 { color: var(--vb-color-gray-800); }
+.vb-text-gray-900 { color: var(--vb-color-gray-900); }
+
+/*========================================
+ * TEXT DECORATION
+ *========================================*/
+
+.vb-underline { text-decoration-line: underline; }
+.vb-overline { text-decoration-line: overline; }
+.vb-line-through { text-decoration-line: line-through; }
+.vb-no-underline { text-decoration-line: none; }
+
+.vb-decoration-solid { text-decoration-style: solid; }
+.vb-decoration-double { text-decoration-style: double; }
+.vb-decoration-dotted { text-decoration-style: dotted; }
+.vb-decoration-dashed { text-decoration-style: dashed; }
+.vb-decoration-wavy { text-decoration-style: wavy; }
+
+.vb-underline-offset-1 { text-underline-offset: 1px; }
+.vb-underline-offset-2 { text-underline-offset: 2px; }
+.vb-underline-offset-4 { text-underline-offset: 4px; }
+.vb-underline-offset-8 { text-underline-offset: 8px; }
+
+/*========================================
+ * TEXT TRANSFORM
+ *========================================*/
+
+.vb-uppercase { text-transform: uppercase; }
+.vb-lowercase { text-transform: lowercase; }
+.vb-capitalize { text-transform: capitalize; }
+.vb-normal-case { text-transform: none; }
+
+/*========================================
+ * TEXT OVERFLOW
+ *========================================*/
+
+.vb-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vb-text-ellipsis { text-overflow: ellipsis; }
+.vb-text-clip { text-overflow: clip; }
+
+/*========================================
+ * WHITE SPACE
+ *========================================*/
+
+.vb-whitespace-normal { white-space: normal; }
+.vb-whitespace-nowrap { white-space: nowrap; }
+.vb-whitespace-pre { white-space: pre; }
+.vb-whitespace-pre-line { white-space: pre-line; }
+.vb-whitespace-pre-wrap { white-space: pre-wrap; }
+.vb-whitespace-break-spaces { white-space: break-spaces; }
+
+/*========================================
+ * WORD BREAK
+ *========================================*/
+
+.vb-break-normal { overflow-wrap: normal; word-break: normal; }
+.vb-break-words { overflow-wrap: break-word; }
+.vb-break-all { word-break: break-all; }
+.vb-break-keep { word-break: keep-all; }
+
+/*========================================
+ * LIST STYLES
+ *========================================*/
+
+.vb-list-none { list-style-type: none; }
+.vb-list-disc { list-style-type: disc; }
+.vb-list-decimal { list-style-type: decimal; }
+
+.vb-list-inside { list-style-position: inside; }
+.vb-list-outside { list-style-position: outside; }
+
+/*========================================
+ * VERTICAL ALIGNMENT
+ *========================================*/
+
+.vb-align-baseline { vertical-align: baseline; }
+.vb-align-top { vertical-align: top; }
+.vb-align-middle { vertical-align: middle; }
+.vb-align-bottom { vertical-align: bottom; }
+.vb-align-text-top { vertical-align: text-top; }
+.vb-align-text-bottom { vertical-align: text-bottom; }
+.vb-align-sub { vertical-align: sub; }
+.vb-align-super { vertical-align: super; }
+
+/*========================================
+ * FONT STYLE
+ *========================================*/
+
+.vb-italic { font-style: italic; }
+.vb-not-italic { font-style: normal; }
+
+/*========================================
+ * LINE CLAMP (Multi-line truncation)
+ *========================================*/
+
+.vb-line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.vb-line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.vb-line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.vb-line-clamp-4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.vb-line-clamp-5 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.vb-line-clamp-none {
+  overflow: visible;
+  display: block;
+  -webkit-box-orient: horizontal;
+  -webkit-line-clamp: none;
+}
