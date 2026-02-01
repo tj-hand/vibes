@@ -10,9 +10,21 @@ log_warning() { echo -e "\033[1;33m[WARNING]\033[0m $1"; }
 case "$TARGET" in
     infinity)
         log_info "Deploying vibes to Infinity..."
-        [ -d "${SCRIPT_DIR}/vibes-fe/styles" ] && { mkdir -p "${TARGET_PATH}/src/styles/vibes"; cp -r "${SCRIPT_DIR}/vibes-fe/styles/"* "${TARGET_PATH}/src/styles/vibes/" 2>/dev/null || true; }
-        [ -d "${SCRIPT_DIR}/vibes-fe/components" ] && { mkdir -p "${TARGET_PATH}/src/components/vibes"; cp -r "${SCRIPT_DIR}/vibes-fe/components/"* "${TARGET_PATH}/src/components/vibes/" 2>/dev/null || true; }
-        log_success "Vibes deployed to Infinity"
+
+        # Deploy to infinity/src/vibes/ (existing placeholder folder)
+        mkdir -p "${TARGET_PATH}/src/vibes"
+
+        # Copy main CSS files
+        [ -f "${SCRIPT_DIR}/vibes-fe/vibes.css" ] && cp "${SCRIPT_DIR}/vibes-fe/vibes.css" "${TARGET_PATH}/src/vibes/"
+        [ -f "${SCRIPT_DIR}/vibes-fe/index.css" ] && cp "${SCRIPT_DIR}/vibes-fe/index.css" "${TARGET_PATH}/src/vibes/"
+
+        # Copy themes directory
+        [ -d "${SCRIPT_DIR}/vibes-fe/themes" ] && cp -r "${SCRIPT_DIR}/vibes-fe/themes" "${TARGET_PATH}/src/vibes/"
+
+        # Copy utilities directory
+        [ -d "${SCRIPT_DIR}/vibes-fe/utilities" ] && cp -r "${SCRIPT_DIR}/vibes-fe/utilities" "${TARGET_PATH}/src/vibes/"
+
+        log_success "Vibes deployed to Infinity (src/vibes/)"
         ;;
     matrix)
         log_warning "Vibes is a frontend-only module, skipping Matrix deployment"
