@@ -27,40 +27,45 @@ log_warning() { echo -e "\033[1;33m[WARNING]\033[0m $1"; }
 # Validate arguments
 [ -z "$TARGET" ] && { echo "Usage: DEPLOY_TARGET=infinity DEPLOY_TARGET_PATH=/path/to/infinity ./deploy.sh"; exit 1; }
 
-# Add CSS import to main.ts
+# Add CSS import to main.js or main.ts
 add_css_import() {
-    local main_ts="$1/src/main.ts"
+    local main_file=""
     local import_line="import '@/vibes/index.css'"
 
-    if [ ! -f "$main_ts" ]; then
-        log_warning "main.ts not found at $main_ts - skipping import"
+    # Find main.js or main.ts
+    if [ -f "$1/src/main.js" ]; then
+        main_file="$1/src/main.js"
+    elif [ -f "$1/src/main.ts" ]; then
+        main_file="$1/src/main.ts"
+    else
+        log_warning "main.js/main.ts not found in $1/src/ - skipping import"
         return
     fi
 
     # Check if import already exists
-    if grep -q "@/vibes/index.css" "$main_ts"; then
-        log_info "CSS import already exists in main.ts"
+    if grep -q "@/vibes/index.css" "$main_file"; then
+        log_info "CSS import already exists in $(basename "$main_file")"
         return
     fi
 
     # Add import after the last existing import statement
     # This preserves the import ordering
-    if grep -q "^import " "$main_ts"; then
+    if grep -q "^import " "$main_file"; then
         # Find line number of last import
-        local last_import_line=$(grep -n "^import " "$main_ts" | tail -1 | cut -d: -f1)
+        local last_import_line=$(grep -n "^import " "$main_file" | tail -1 | cut -d: -f1)
         # Insert after last import
         sed -i.bak "${last_import_line}a\\
 ${import_line}
-" "$main_ts"
-        rm -f "$main_ts.bak"
-        log_success "Added CSS import to main.ts (after line $last_import_line)"
+" "$main_file"
+        rm -f "$main_file.bak"
+        log_success "Added CSS import to $(basename "$main_file") (after line $last_import_line)"
     else
         # No imports found, add at top
         sed -i.bak "1i\\
 ${import_line}
-" "$main_ts"
-        rm -f "$main_ts.bak"
-        log_success "Added CSS import to main.ts (at top)"
+" "$main_file"
+        rm -f "$main_file.bak"
+        log_success "Added CSS import to $(basename "$main_file") (at top)"
     fi
 }
 
