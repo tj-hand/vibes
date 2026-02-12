@@ -14,13 +14,11 @@
 .vb-collapse { visibility: collapse; }
 
 /*========================================
- * HIDDEN / SHOW
+ * RESPONSIVE DISPLAY
+ * Note: Base .vb-hidden/.vb-block defined in layout.css
  *========================================*/
 
-.vb-hidden { display: none; }
-.vb-block { display: block; }
-
-/* Show only on specific screen sizes */
+/* Responsive display utilities */
 @media (max-width: 639px) {
   .vb-sm\:hidden { display: none; }
   .vb-sm\:block { display: block; }
@@ -48,30 +46,9 @@
 
 /*========================================
  * SCREEN READER ONLY
+ * Note: Base .vb-sr-only/.vb-not-sr-only defined in vibes.css
+ * These are kept for reference but the base definitions take precedence
  *========================================*/
-
-.vb-sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-.vb-not-sr-only {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
-}
 
 /*========================================
  * CURSOR

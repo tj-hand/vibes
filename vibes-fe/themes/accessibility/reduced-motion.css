@@ -13,44 +13,24 @@
  * - Or system preference: prefers-reduced-motion: reduce
  */
 
-/* User preference via data attribute */
-[data-motion="reduce"],
-/* System preference detection */
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    /*========================================
-     * DISABLE ALL TRANSITIONS
-     *========================================*/
-    --vb-transition-all: none;
-    --vb-transition-colors: none;
-    --vb-transition-opacity: none;
-    --vb-transition-transform: none;
-    --vb-transition-shadow: none;
+/*========================================
+ * USER PREFERENCE VIA DATA ATTRIBUTE
+ *========================================*/
+[data-motion="reduce"] {
+  --vb-transition-all: none;
+  --vb-transition-colors: none;
+  --vb-transition-opacity: none;
+  --vb-transition-transform: none;
+  --vb-transition-shadow: none;
 
-    /*========================================
-     * SET ALL DURATIONS TO INSTANT
-     *========================================*/
-    --vb-duration-75: 0ms;
-    --vb-duration-100: 0ms;
-    --vb-duration-150: 0ms;
-    --vb-duration-200: 0ms;
-    --vb-duration-300: 0ms;
-    --vb-duration-500: 0ms;
-    --vb-duration-700: 0ms;
-    --vb-duration-1000: 0ms;
-  }
-
-  /*========================================
-   * REMOVE ALL ANIMATIONS
-   *========================================*/
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+  --vb-duration-75: 0ms;
+  --vb-duration-100: 0ms;
+  --vb-duration-150: 0ms;
+  --vb-duration-200: 0ms;
+  --vb-duration-300: 0ms;
+  --vb-duration-500: 0ms;
+  --vb-duration-700: 0ms;
+  --vb-duration-1000: 0ms;
 }
 
 /* Explicit reduced motion via attribute */
@@ -67,59 +47,54 @@
  * SPECIFIC COMPONENT OVERRIDES
  *========================================*/
 
-[data-motion="reduce"] {
-  /* Loading spinners - Show static state */
-  .vb-spinner {
-    animation: none;
-  }
+/* Loading spinners - Show static state */
+[data-motion="reduce"] .vb-spinner {
+  animation: none;
+}
 
-  /* Skeleton loaders - Show solid state */
-  .vb-skeleton {
-    animation: none;
-    background: var(--vb-color-gray-200);
-  }
+/* Skeleton loaders - Show solid state */
+[data-motion="reduce"] .vb-skeleton {
+  animation: none;
+  background: var(--vb-color-gray-200);
+}
 
-  /* Collapse/Expand - Instant */
-  .vb-collapse {
-    transition: none;
-  }
+/* Collapse/Expand - Instant */
+[data-motion="reduce"] .vb-collapse {
+  transition: none;
+}
 
-  /* Dropdown menus - Instant appear */
-  .vb-dropdown,
-  .vb-menu {
-    transition: none;
-  }
+/* Dropdown menus - Instant appear */
+[data-motion="reduce"] .vb-dropdown,
+[data-motion="reduce"] .vb-menu {
+  transition: none;
+}
 
-  /* Modal - Instant appear/disappear */
-  .vb-modal {
-    transition: none;
-  }
+/* Modal - Instant appear/disappear */
+[data-motion="reduce"] .vb-modal,
+[data-motion="reduce"] .vb-modal-backdrop {
+  transition: none;
+}
 
-  .vb-modal-backdrop {
-    transition: none;
-  }
+/* Toast notifications - Instant appear */
+[data-motion="reduce"] .vb-toast {
+  transition: none;
+  animation: none;
+}
 
-  /* Toast notifications - Instant appear */
-  .vb-toast {
-    transition: none;
-    animation: none;
-  }
+/* Progress bars - No animation */
+[data-motion="reduce"] .vb-progress-bar {
+  transition: none;
+}
 
-  /* Progress bars - No animation */
-  .vb-progress-bar {
-    transition: none;
-  }
+/* Hover effects - Still show state change, but instant */
+[data-motion="reduce"] a:hover,
+[data-motion="reduce"] button:hover {
+  transition: none;
+}
 
-  /* Hover effects - Still show state change, but instant */
-  a:hover,
-  button:hover {
-    transition: none;
-  }
-
-  /* Smooth scrolling disabled */
-  html {
-    scroll-behavior: auto;
-  }
+/* Smooth scrolling disabled */
+[data-motion="reduce"] html {
+  scroll-behavior: auto;
 }
 
 /*========================================
